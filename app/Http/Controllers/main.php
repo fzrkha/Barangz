@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\barang;
+use App\Models\keluar;
+use App\Models\masuk;
 use Illuminate\Http\Request;
 
 class main extends Controller
@@ -29,13 +31,15 @@ class main extends Controller
 
     public function hisin() {
         return view('hin', [
-            "title" => "History Pemasukan"
+            "title" => "History Pemasukan",
+            "in" => masuk::all()
         ]);
     }
 
     public function hisout() {
         return view('hout', [
-            "title" => "History Pengeluaran"
+            "title" => "History Pengeluaran",
+            "out" => keluar::all()
         ]);
     }
 

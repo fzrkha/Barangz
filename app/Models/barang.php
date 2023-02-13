@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class barang extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
+
+    public function masuk() {
+        return $this->hasMany(masuk::class);
+    }
+
+    public function keluar() {
+        return $this->hasMany(keluar::class);
+    }
 }

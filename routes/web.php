@@ -20,6 +20,6 @@ Route::get('/list', [main::class, 'list']);
 
 Route::get('/history', [main::class, 'history']);
 
-Route::get('/his-in', [main::class, 'hisin']);
+Route::get('/history/in', [main::class, 'hisin']);
 
-Route::get('/his-out', [main::class, 'hisout']);
+Route::get('/history/out', [main::class, 'hisout']);
