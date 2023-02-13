@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\barang;
 use Illuminate\Http\Request;
 
 class main extends Controller
@@ -14,7 +15,8 @@ class main extends Controller
 
     public function list() {
         return view('list', [
-            "title" => "Item List"
+            "title" => "Item List",
+            "item" => barang::all()
         ]);
     }
 
