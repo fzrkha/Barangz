@@ -15,3 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [main::class, 'index']);
+
+Route::get('/list', [main::class, 'list']);
+
+Route::get('/history', [main::class, 'history']);
+
+Route::get('/his-in', [main::class, 'hisin']);
+
+Route::get('/his-out', [main::class, 'hisout']);
