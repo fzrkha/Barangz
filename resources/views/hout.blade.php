@@ -9,6 +9,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Jumlah</th>
+                    <th scope="col">Tanggal</th>
                 </tr>
             </thead>
             <tbody>
@@ -17,8 +18,12 @@
                     <td>{{ $items->barang->id }}</td>
                     <td>{{ $items->barang->nama }}</td>
                     <td>{{ $items->jumlah }}</td>
+                    <td>{{ $items->tanggal_jam }}</td>
                 </tr>
                 @endforeach
+                <tr>
+                    <td colspan="4" align="right"><a href="/history">Back</a></td>
+                </tr>
             </tbody>
         </table>
     </div>

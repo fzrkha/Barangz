@@ -20,10 +20,22 @@
               Another Action
             </a>
             <ul class="dropdown-menu">
+                @auth
+                <li><a class="dropdown-item" href="/insert">Insert Item</a></li>
+              <li><a class="dropdown-item disabled">Manage Items</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <form action="/logout" method="post">
+                    @csrf
+                    <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-left"></i> Logout</button>
+                </form>
+              </li>
+                @else
               <li><a class="dropdown-item disabled">Insert Item</a></li>
               <li><a class="dropdown-item disabled">Manage Items</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item disabled">You must be logged as admin or operator to use any of these.</a></li>
+                @endauth
             </ul>
           </li>
         </ul>
