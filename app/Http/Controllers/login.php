@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class admin extends Controller
+class login extends Controller
 {
     public function login() {
-        return view('login.admin', [
-            "title" => "Admin Login"
+        return view('auth.login', [
+            "title" => "Login"
             ]);
     }
 

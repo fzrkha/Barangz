@@ -17,24 +17,23 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Another Action
+              <i class="bi bi-gear-fill"></i>
             </a>
             <ul class="dropdown-menu">
                 @auth
-                <li><a class="dropdown-item" href="/insert">Insert Item</a></li>
-              <li><a class="dropdown-item disabled">Manage Items</a></li>
+              <li><a class="dropdown-item" href="/{{ auth()->user()->username }}">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/crud">Add Item</a></li>
+              <li><a class="dropdown-item" href="/edit">Edit Items</a></li>
               <li><hr class="dropdown-divider"></li>
               <li>
                 <form action="/logout" method="post">
                     @csrf
-                    <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-left"></i> Logout</button>
+                    <button type="submit" class="dropdown-item" style="color : red"><b><i class="bi bi-box-arrow-left"></i> Logout</b></button>
                 </form>
               </li>
                 @else
-              <li><a class="dropdown-item disabled">Insert Item</a></li>
-              <li><a class="dropdown-item disabled">Manage Items</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item disabled">You must be logged as admin or operator to use any of these.</a></li>
+              <li><a class="dropdown-item" href="/login" style="color : rgb(0, 110, 255)"><b><i class="bi bi-box-arrow-in-right"></i> Login</b></a></li>
                 @endauth
             </ul>
           </li>

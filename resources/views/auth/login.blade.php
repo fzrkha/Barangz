@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
-    <title>Login</title>
+    <title>Barbgus | {{ $title }}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
 
@@ -76,7 +76,7 @@
   <body class="text-center">
     
 <main class="form-signin w-100 m-auto">
-  <form action="/admin-login" method="post">
+  <form action="/login" method="post">
     @csrf
     <h1><i class="bi bi-database-fill"></i></h1>
     <h1 class="h3 mb-3 fw-normal">Login as Admin</h1>
@@ -95,7 +95,7 @@
       <label for="password">Password</label>
     </div>
 
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+    <button class="w-100 btn btn-lg btn-warning" type="submit">Login</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
   </form>
 </main>
