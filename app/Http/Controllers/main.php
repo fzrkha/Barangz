@@ -56,7 +56,7 @@ class main extends Controller
         $barang->gambar = $request->gambar;
         $barang->jumlah = $request->jumlah;
         $barang->save();
-        return redirect()->back();
+        return redirect('/list');
     }
 
     public function edit() {
