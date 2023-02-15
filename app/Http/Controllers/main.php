@@ -44,7 +44,7 @@ class main extends Controller
     }
 
     public function add() {
-        return view('adding', [
+        return view('add', [
             "title" => "Add Item"
         ]);
     }
@@ -52,6 +52,12 @@ class main extends Controller
     public function edit() {
         return view('edit', [
             "title" => "Edit Items"
+        ]);
+    }
+
+    public function profile() {
+        return view('auth.profile', [
+            "title" => "Profile"
         ]);
     }
 }

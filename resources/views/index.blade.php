@@ -5,11 +5,45 @@
 <div class="container-fluid banner">
 	<div class="container text-center">
 		<h3 class="display-1"><b>Welcome, {{ auth()->user()->name }}!</b></h3>
-		<a href="/{{ auth()->user()->username }}">
+		<a href="#start">
 			<button type="button" class="btn btn-warning btn-lg">
-				My Profile
+				Start
 			</button>
 		</a>
+	</div>
+</div>
+
+<div class="container-fluid pt-5 pb-5">
+	<div class="container text-center">
+		<a href="/profile"><img src="{{ asset('img') }}/{{ auth()->user()->gambar }}" width="150" height="150"></a>
+		<h2 id="start"><a href="/profile" class="text-decoration-none" style="color : black">{{ auth()->user()->name }}</a></h2>
+		<small>({{ auth()->user()->level }})</small>
+		<div class="row pt-4">
+			<div class="col-md-4">
+				<a href="/list">
+					<button type="button" class="btn btn-warning btn-lg">
+						<h1 class="display-1"><i class="bi bi-list-ul" width="200" height="200"></i></h1>
+					</button>
+				</a>
+				<a href="/list" class="text-decoration-none" style="color : black"><h3>Item List</h3></a>
+			</div>
+			<div class="col-md-4">
+				<a href="/history/in">
+					<button type="button" class="btn btn-warning btn-lg">
+						<h1 class="display-1"><i class="bi bi-box-arrow-in-down"></i></h1>
+					</button>
+				</a>
+				<a href="/history/in" class="text-decoration-none" style="color : black"><h3>History barang masuk</h3></a>
+			</div>
+			<div class="col-md-4">
+				<a href="/history/out">
+					<button type="button" class="btn btn-warning btn-lg">
+						<h1 class="display-1"><i class="bi bi-box-arrow-up"></i></h1>
+					</button>
+				</a>
+				<a href="/history/out" class="text-decoration-none" style="color : black"><h3>History barang keluar</h3></a>
+			</div>
+		</div>
 	</div>
 </div>
 @else

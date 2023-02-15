@@ -21,10 +21,15 @@
             </a>
             <ul class="dropdown-menu">
                 @auth
-              <li><a class="dropdown-item" href="/{{ auth()->user()->username }}">Profile</a></li>
+              <li><a class="dropdown-item" href="/profile">Profile</a></li>
+              @if (auth()->user()->level=="admin")
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/crud">Add Item</a></li>
+              @endif
+              @if (auth()->user()->level=="operator")
+              <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/edit">Edit Items</a></li>
+              @endif
               <li><hr class="dropdown-divider"></li>
               <li>
                 <form action="/logout" method="post">
