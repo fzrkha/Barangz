@@ -48,6 +48,10 @@ class main extends Controller
             "title" => "Add Item"
         ]);
     }
+    public function create(Request $request) {
+        barang::create(['barangs' => $request->barangs]);
+        return back();
+    }
 
     public function edit() {
         return view('edit', [

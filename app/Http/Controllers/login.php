@@ -13,16 +13,14 @@ class login extends Controller
             ]);
     }
 
-    public function auth(Request $request)
-    {
+    public function auth(Request $request) {
         if (Auth::attempt($request->only('email', 'password'))){
         return redirect('/');
         }
         return back()->with('loginError', '');
     } 
 
-    public function logout (Request $request)
-    {
+    public function logout (Request $request) {
         Auth::logout();
         return redirect('/');
     }

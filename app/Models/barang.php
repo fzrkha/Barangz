@@ -9,7 +9,12 @@ class barang extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    protected $fillable = [
+        'nama',
+        'gambar',
+        'deskripsi',
+        'jumlah'
+    ];
 
     public function masuk() {
         return $this->hasMany(masuk::class);

@@ -29,12 +29,13 @@ Route::get('/login', [login::class, 'login'])->name('login')->middleware('guest'
 Route::post('/login', [login::class, 'auth']);
 Route::post('/logout', [login::class, 'logout']);
 
-Route::group(['middleware' => ['auth', 'checklevel:admin, operator, user']], function () {
+Route::group(['middleware' => ['auth', 'checklevel:admin,operator,user']], function () {
     Route::get('/profile', [main::class, 'profile'])->name('auth.profile');
 });
 
 Route::group(['middleware' => ['auth', 'checklevel:admin']], function () {
     Route::get('/crud', [main::class, 'add'])->name('add');
+    Route::post('/crud', [main::class, 'create']);
 });
 
 Route::group(['middleware' => ['auth', 'checklevel:operator']], function () {
