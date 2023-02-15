@@ -43,4 +43,15 @@ class main extends Controller
         ]);
     }
 
+    public function add() {
+        return view('adding', [
+            "title" => "Add Item"
+        ]);
+    }
+
+    public function edit() {
+        return view('edit', [
+            "title" => "Edit Items"
+        ]);
+    }
 }

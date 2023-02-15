@@ -28,3 +28,6 @@ Route::get('/history/out', [main::class, 'hisout']);
 Route::get('/login', [login::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [login::class, 'auth']);
 Route::post('/logout', [login::class, 'logout']);
+
+Route::get('/crud', [main::class, 'add']);
+Route::get('/edit', [main::class, 'edit']);
