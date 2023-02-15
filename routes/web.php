@@ -35,7 +35,7 @@ Route::group(['middleware' => ['auth', 'checklevel:admin,operator,user']], funct
 
 Route::group(['middleware' => ['auth', 'checklevel:admin']], function () {
     Route::get('/crud', [main::class, 'add'])->name('add');
-    Route::post('/crud', [main::class, 'create']);
+    Route::post('/crud', [main::class, 'store'])->name('store_barang');
 });
 
 Route::group(['middleware' => ['auth', 'checklevel:operator']], function () {

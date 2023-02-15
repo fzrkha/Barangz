@@ -7,6 +7,7 @@ use App\Models\keluar;
 use App\Models\masuk;
 use Illuminate\Http\Request;
 
+
 class main extends Controller
 {
     public function index() {
@@ -48,9 +49,14 @@ class main extends Controller
             "title" => "Add Item"
         ]);
     }
-    public function create(Request $request) {
-        barang::create(['barangs' => $request->barangs]);
-        return back();
+    public function store(Request $request) {
+        $barang = new barang;
+        $barang->nama = $request->nama;
+        $barang->deskripsi = $request->deskripsi;
+        $barang->gambar = $request->gambar;
+        $barang->jumlah = $request->jumlah;
+        $barang->save();
+        return redirect()->back();
     }
 
     public function edit() {
