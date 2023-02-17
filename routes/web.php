@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\change;
 use App\Http\Controllers\login;
 use App\Http\Controllers\main;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,7 @@ Route::group(['middleware' => ['auth', 'checklevel:admin,operator,user']], funct
 Route::group(['middleware' => ['auth', 'checklevel:admin']], function () {
     Route::get('/crud', [main::class, 'add'])->name('add');
     Route::post('/crud', [main::class, 'store'])->name('store_barang');
+    Route::delete('/list/{id}', [change::class, 'destroy'])->name('destroy');
 });
 
 Route::group(['middleware' => ['auth', 'checklevel:operator']], function () {
