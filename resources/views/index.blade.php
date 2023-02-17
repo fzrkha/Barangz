@@ -16,9 +16,9 @@
 <div class="container-fluid pt-5 pb-5">
 	<div class="container text-center">
 		<div class="pp">
-			<a href="/profile"><img src="{{ asset('img') }}/{{ auth()->user()->gambar }}" width="150" height="150" class="rounded-circle mb-3"></a>
+			<a href="/profile/{{ auth()->user()->username }}"><img src="{{ asset('img') }}/{{ auth()->user()->gambar }}" width="150" height="150" class="rounded-circle mb-3"></a>
 		</div>
-		<h2 id="start"><a href="/profile" class="text-decoration-none" style="color : black">{{ auth()->user()->name }}</a></h2>
+		<h2 id="start"><a href="/profile/{{ auth()->user()->username }}" class="text-decoration-none" style="color : black">{{ auth()->user()->name }}</a></h2>
 		<small>({{ auth()->user()->level }})</small>
 		<div class="row pt-4">
 			<div class="col-md-4">

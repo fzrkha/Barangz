@@ -29,7 +29,7 @@
             </tr>
             <tr>
                 <td><input type="number" name="jumlah" value="{{ $barang->jumlah }}"></td>
-                <td><button type="submit" class="btn btn-warning">Add</button></td>
+                <td><button type="submit" class="btn btn-warning">Update</button></td>
             </tr>
         </table>
     </form>

@@ -31,7 +31,9 @@ Route::post('/login', [login::class, 'auth']);
 Route::post('/logout', [login::class, 'logout']);
 
 Route::group(['middleware' => ['auth', 'checklevel:admin,operator,user']], function () {
-    Route::get('/profile', [main::class, 'profile'])->name('auth.profile');
+    Route::get('/profile/{username}', [main::class, 'profile'])->name('auth.profile');
+    Route::get('/profile/{username}/edit', [main::class, 'profiledit'])->name('auth.edit');
+    Route::put('/profile/{username}', [main::class, 'update']);
 });
 
 Route::group(['middleware' => ['auth', 'checklevel:admin']], function () {

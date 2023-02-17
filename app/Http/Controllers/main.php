@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\barang;
 use App\Models\keluar;
 use App\Models\masuk;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 
@@ -59,9 +60,29 @@ class main extends Controller
         return redirect('/list');
     }
 
-    public function profile() {
+    public function profile($username) {
+        $user = User::find($username);
         return view('auth.profile', [
             "title" => "Profile"
         ]);
+    }
+
+    public function profiledit($username) {
+        $user= User::find($username);
+        return view('auth.profiledit', [
+            "title" => "Edit Profile"
+        ]);
+    }
+
+    public function update(Request $request, $username) {
+        User::find($username)->update([
+            'name' => $request->name,
+            'username' => $request->username,
+            'gambar' => $request->gambar,
+            'email' => $request->email,
+            'password' => $request->password,
+            'level' => $request->level
+        ]);
+        return redirect("/profile/$username")->with('success','Akun berhasil diperbarui!');
     }
 }
