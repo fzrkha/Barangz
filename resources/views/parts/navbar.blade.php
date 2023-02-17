@@ -21,7 +21,7 @@
             </a>
             <ul class="dropdown-menu">
                 @auth
-              <li><a class="dropdown-item" href="/profile">Profile</a></li>
+              <li><a class="dropdown-item" href="/profile/{{ auth()->user()->username }}">Profile</a></li>
               @if (auth()->user()->level=="admin")
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/crud">Add Item</a></li>
