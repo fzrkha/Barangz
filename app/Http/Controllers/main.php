@@ -59,12 +59,6 @@ class main extends Controller
         return redirect('/list');
     }
 
-    public function edit() {
-        return view('edit', [
-            "title" => "Edit Items"
-        ]);
-    }
-
     public function profile() {
         return view('auth.profile', [
             "title" => "Profile"

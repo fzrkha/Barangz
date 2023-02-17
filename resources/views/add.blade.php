@@ -33,5 +33,4 @@
         </table>
     </form>
 </div>
-
 @endsection

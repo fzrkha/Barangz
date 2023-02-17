@@ -13,4 +13,21 @@ class change extends Controller
         barang::find($id)->delete();
         return back();
     }
+
+    public function edit($id) {
+        $barang = barang::find($id);
+        return view('edit', compact('barang'), [
+            "title" => "Edit: IC-$barang->id"
+        ]);
+    }
+
+    public function update(Request $request, $id) {
+        barang::find($id)->update([
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi,
+            'gambar' => $request->gambar,
+            'jumlah' => $request->jumlah
+        ]);
+        return redirect("/list")->with('success','Barang berhasil diperbarui!');
+    }
 }

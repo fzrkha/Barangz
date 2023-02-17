@@ -38,8 +38,10 @@ Route::group(['middleware' => ['auth', 'checklevel:admin']], function () {
     Route::get('/crud', [main::class, 'add'])->name('add');
     Route::post('/crud', [main::class, 'store'])->name('store_barang');
     Route::delete('/list/{id}', [change::class, 'destroy'])->name('destroy');
+    Route::get('/list/{id}/edit', [change::class, 'edit'])->name('edit');
+    Route::put('/list/{id}', [change::class, 'update']);
 });
 
 Route::group(['middleware' => ['auth', 'checklevel:operator']], function () {
-    Route::get('/edit', [main::class, 'edit'])->name('edit');
+    Route::get('/history/edit', [main::class, 'edit'])->name('edit');
 });

@@ -11,18 +11,24 @@
                     <th scope="col">Gambar</th>
                     <th scope="col">Deskripsi</th>
                     <th scope="col">Jumlah</th>
+                    @auth
+                    @if (auth()->user()->level=="admin")
                     <th scope="col">Edit</th>
                     <th scope="col">Delete</th>
+                    @endif
+                    @endauth
                 </tr>
             </thead>
             <tbody>
                 @foreach ($item as $items)
                 <tr>
                     <td>{{ $items->id }}</td>
-                    <td>{{ $items->nama }}</td>
-                    <td><img src="{{ asset('img') }}/{{ $items->gambar }}" width="200" height="200"></td>
+                    <td><b>{{ $items->nama }}</b></td>
+                    <td><img src="{{ asset('img') }}/{{ $items->gambar }}" width="100" height="100"></td>
                     <td>{{ $items->deskripsi }}</td>
                     <td>{{ $items->jumlah }}</td>
+                    @auth
+                    @if (auth()->user()->level=="admin")
                     <td>
                         <div>
                             <a href="/list/{{ $items->id }}/edit">
@@ -39,6 +45,8 @@
                              </form>
                         </div>
                     </td>
+                    @endif
+                    @endauth
                 </tr>
                 @endforeach
             </tbody>
