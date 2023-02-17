@@ -15,5 +15,8 @@
                 <h3>Email: {{ auth()->user()->email }}</h3>
         </div>
     </div>
+    <a href="/profile/edit">
+        <button type="button" class="btn btn-warning">Edit</button>
+    </a>
 </div>
 @endsection
